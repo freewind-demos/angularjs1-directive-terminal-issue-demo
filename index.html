@@ -2,7 +2,10 @@
 <head>
 </head>
 <body ng-app="app">
-<div background-color="red">Hello, AngularJS!</div>
+<div hello-to="AngularJS">
+    Hello, {{userName}}
+    <button ng-click="sayHello()">Alert</button>
+</div>
 <script src="./node_modules/angular/angular.js"></script>
 <script src="./app.js"></script>
 </body>

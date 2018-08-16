@@ -1,10 +1,14 @@
 const app = angular.module('app', []);
-app.directive('backgroundColor', function () {
+app.directive('helloTo', ['$window', function ($window) {
     return {
         restrict: 'A',
         controller: function ($scope, $element, $attrs) {
-            const color = $attrs.backgroundColor;
-            $element.css("background-color", color);
+            console.dir($element);
+            console.dir($attrs);
+            $scope.userName = $attrs.helloTo;
+            $scope.sayHello = function () {
+                $window.alert('Hello, ' + $scope.userName);
+            };
         }
     }
-});
+}]);
