@@ -1,7 +1,7 @@
-AngularJS1 Directive Priority Demo
-==================================
+AngularJS1 Directive "Terminal" Issue Demo
+==========================================
 
-如果多个directive同时作用在一个元素上，`priority`大的先执行。
+If a directive have `terminal:true`, the expressions won't be rendered.
 
 ```
 npm install
@@ -13,4 +13,4 @@ open index.html
 Resources
 ---------
 
-- directive `priority` api: <https://docs.angularjs.org/api/ng/service/$compile#-priority->
+- directive `terminal` api: <https://docs.angularjs.org/api/ng/service/$compile#-terminal->
