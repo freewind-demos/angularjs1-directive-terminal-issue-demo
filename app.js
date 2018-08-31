@@ -1,14 +1,23 @@
-const app = angular.module('app', []);
-app.directive('helloTo', ['$window', function ($window) {
+const app = angular.module('app', [])
+app.controller('MyController', function ($scope) {
+    $scope.hello = 'Hello, AngularJS'
+})
+
+app.directive('hello1', function () {
     return {
         restrict: 'A',
-        controller: function ($scope, $element, $attrs) {
-            console.dir($element);
-            console.dir($attrs);
-            $scope.userName = $attrs.helloTo;
-            $scope.sayHello = function () {
-                $window.alert('Hello, ' + $scope.userName);
-            };
+        priority: 1,
+        controller: function ($scope) {
+            $scope.hello += ' (hello111) '
         }
     }
-}]);
+})
+app.directive('hello2', function () {
+    return {
+        restrict: 'A',
+        priority: 2,
+        controller: function ($scope) {
+            $scope.hello += ' (hello222) '
+        }
+    }
+})
