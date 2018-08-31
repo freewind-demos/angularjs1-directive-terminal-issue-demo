@@ -6,7 +6,6 @@ app.controller('MyController', function ($scope) {
 
 app.directive('myTerminal', function () {
     return {
-        restrict: 'A',
         terminal: true,
         link: function () {
             console.log('--- myTerminal')
